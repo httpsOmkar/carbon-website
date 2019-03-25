@@ -668,9 +668,10 @@
   version "0.0.1-alpha.31"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-alpha.31.tgz#41224409d085a577463b8681399572362dc601cb"
 
-"@carbon/icon-helpers@0.0.1-alpha.32":
-  version "0.0.1-alpha.32"
-  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-alpha.32.tgz#6bb291b574ebd49784fec4c8751245840aedb80c"
+"@carbon/icon-helpers@0.0.1-beta.4":
+  version "0.0.1-beta.4"
+  resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-0.0.1-beta.4.tgz#5bc4c0a670c5d1cb65a6e14dddab8387ddfe6c71"
+  integrity sha512-A69SR1QBC52fZg/ur8++wTN2fFuFZZhrThAqLXDVPXy7lyOvDfKDsa3ahlTvrIhVoFBKEk1Qb78eORu3mo2o8g==
 
 "@carbon/icons-react@0.0.1-alpha.31":
   version "0.0.1-alpha.31"
@@ -679,12 +680,12 @@
     "@carbon/icon-helpers" "0.0.1-alpha.31"
     prop-types "^15.6.2"
 
-"@carbon/icons-react@^0.0.1-alpha.32":
-  version "0.0.1-alpha.32"
-  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-0.0.1-alpha.32.tgz#8e507d231399e4197e2868c6c215e3bba74f226a"
-  integrity sha512-PO96imAfYa4O+ckMLu7VRK6SOZgkM0nwPbz0KAIXPWsDuAH+hP9OIUYHjRbzLXunzwHGGGygXNAxmMIFSLzUOg==
+"@carbon/icons-react@^0.0.1-beta.2":
+  version "0.0.1-beta.4"
+  resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-0.0.1-beta.4.tgz#37e82fed11f9e6695c53bff7a356581e6923e835"
+  integrity sha512-qlwz7iG0kqulTFmYqycHKIGVt7mhqh21oaRsFZomeMUTOSpkHyHk5rbSFEylH1e9V0CC/a37FvkIZrHyuzZDjg==
   dependencies:
-    "@carbon/icon-helpers" "0.0.1-alpha.32"
+    "@carbon/icon-helpers" "0.0.1-beta.4"
     prop-types "^15.6.2"
 
 "@carbon/import-once@0.0.1-alpha.31":
@@ -4175,11 +4176,11 @@ capture-stack-trace@^1.0.0:
   resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
 
 carbon-components-react@^6.100.0:
-  version "6.100.0"
-  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.100.0.tgz#ff257473f1465dd474011784e6046d7fd83ee639"
-  integrity sha512-/HuXw8MwFsC65Vxvmx3PAJxTypzuFWb5V8y70HJ9sSvzcBdecyTOsdHBdlyE3mWPmx5lGRrPb7Z3Y/V7xKUbcQ==
+  version "6.111.4"
+  resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-6.111.4.tgz#932be1cc4d7f40625260ca99f575c2fd27df3b3a"
+  integrity sha512-9g6mWmy1h8LqN97kWwV8MMPSJFZi22ItQnA+YqvoHm0EOE04GJFRfx62KMa5Zl/BcgDAr5yuBOuFPZU58mYV2A==
   dependencies:
-    "@carbon/icons-react" "^0.0.1-alpha.32"
+    "@carbon/icons-react" "^0.0.1-beta.2"
     classnames "2.2.6"
     downshift "^1.31.14"
     flatpickr "4.5.5"
@@ -5989,6 +5990,7 @@ download@^7.1.0:
 downshift@^1.31.14:
   version "1.31.16"
   resolved "https://registry.yarnpkg.com/downshift/-/downshift-1.31.16.tgz#acd81631539502d4112d01bd573654419fd9f640"
+  integrity sha512-RskXmiGSoz0EHAyBrmTBGSLHg6+NYDGuLu2W3GpmuOe6hmZEWhCiQrq5g6DWzhnUaJD41xHbbfC6j1Fe86YqgA==
 
 duplexer2@0.0.2:
   version "0.0.2"
@@ -10435,6 +10437,7 @@ lodash.clonedeep@^4.3.2, lodash.clonedeep@^4.5.0:
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
 
 lodash.defaults@^4.0.1:
   version "4.2.0"
@@ -10532,6 +10535,7 @@ lodash.mergewith@^4.6.0, lodash.mergewith@^4.6.1:
 lodash.omit@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
+  integrity sha1-brGa5aHuHdnfC5aeZs4Lf6MLXmA=
 
 lodash.pick@^4.2.1, lodash.pick@^4.4.0:
   version "4.4.0"
@@ -13500,9 +13504,9 @@ react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.1.tgz#a80141e246eb894824fb4f2901c0c50ef31d4cdb"
 
 react-is@^16.8.2:
-  version "16.8.3"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.3.tgz#4ad8b029c2a718fc0cfc746c8d4e1b7221e5387d"
-  integrity sha512-Y4rC1ZJmsxxkkPuMLwvKvlL1Zfpbcu+Bf4ZigkHup3v9EfdYhAlWAaVyA19olXq2o2mGn0w+dFKvk3pVVlYcIA==
+  version "16.8.5"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.5.tgz#c54ac229dd66b5afe0de5acbe47647c3da692ff8"
+  integrity sha512-sudt2uq5P/2TznPV4Wtdi+Lnq3yaYW8LfvPKLM9BKD8jJNBkxMVyB0C9/GmVhLw7Jbdmndk/73n7XQGeN9A3QQ==
 
 react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
@@ -16594,6 +16598,7 @@ ware@^1.2.0:
 warning@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
+  integrity sha1-MuU3fLVy3kqwR1O9+IIcAe1gW3w=
   dependencies:
     loose-envify "^1.0.0"
 
@@ -16880,6 +16885,7 @@ widest-line@^2.0.0:
 window-or-global@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/window-or-global/-/window-or-global-1.0.1.tgz#dbe45ba2a291aabc56d62cf66c45b7fa322946de"
+  integrity sha1-2+RboqKRqrxW1iz2bEW3+jIpRt4=
 
 window-size@0.1.0:
   version "0.1.0"

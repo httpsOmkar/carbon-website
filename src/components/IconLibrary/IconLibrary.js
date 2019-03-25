@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Loading } from 'carbon-components-react';
+import { Search, Loading, DropdownV2 } from 'carbon-components-react';
 import icons from 'carbon-icons';
 import IconEmptyState from '../IconEmptyState';
 
@@ -105,6 +105,7 @@ export default class IconLibrary extends React.Component {
     } = this.state;
 
     const search = (
+      <>
       <Search
         small
         className="icon-search"
@@ -114,6 +115,8 @@ export default class IconLibrary extends React.Component {
         value={this.state.searchValue}
         labelText="Icon library search"
       />
+      <DropdownV2 />
+      </>
     );
 
     if (isLoading) {
