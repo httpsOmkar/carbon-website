@@ -2,6 +2,12 @@
   position: fixed;
   bottom: 0;
   width: calc( 100% - 2rem );
+  max-width: 70rem;
+  transition: transform $transition--expansion $carbon--standard-easing; 
+  transform: translateY(100%);
+  &.active {
+    transform: translateY(0);
+  }
 
   @include carbon--breakpoint('md') {
     width: calc( 100% - 4rem );
@@ -30,6 +36,10 @@
   border: none;
   background-color: transparent;
   padding: 0;
+
+  &:focus {
+    outline: 2px solid $focus;
+  }
 }
 
 .icon-details-content {

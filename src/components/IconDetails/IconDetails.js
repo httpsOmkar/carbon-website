@@ -12,15 +12,6 @@ const { prefix } = settings;
 class IconDetails extends Component {
   render() {
     const {icons} = this.props
-    // const { Download16,
-    //         Asleep16,
-    //         Asleep20,
-    //         Asleep24,
-    //         Asleep32,
-    //         Close20,
-    //          } = icons
-
-    console.log('va', icons)
 
     return (
       <div className="icon-details-container">

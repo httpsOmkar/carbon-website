@@ -162,8 +162,10 @@ export default class IconLibrary extends React.Component {
     return (
       <div className="page ibm--row">
         <div className="ibm--col-lg-8 ibm--offset-lg-4">{search}</div>
-        <div className="ibm--col-lg-12 ibm--offset-lg-4">{sections}</div>
-        <div className="ibm--col-lg-12 ibm--offset-lg-4"><IconDetails icons={icons} /></div>
+        <div className="ibm--col-lg-12 ibm--offset-lg-4">
+          {sections}
+          <IconDetails icons={icons} />
+        </div>
       </div>
     );
   }
