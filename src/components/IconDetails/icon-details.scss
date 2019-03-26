@@ -121,6 +121,10 @@
       &:hover {
         background-color: $carbon--gray-90;
       }
+
+      &:focus {
+        outline: 2px solid $focus;
+      }
     }
   }
 }
@@ -135,7 +139,7 @@
     &:first-of-type {
       margin-left: 0;
     }
-    
+
     button {
       border: none;
       background-color: transparent;

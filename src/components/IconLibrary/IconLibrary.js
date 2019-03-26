@@ -4,6 +4,8 @@ import icons from 'carbon-icons';
 import IconEmptyState from '../IconEmptyState';
 import IconDetails from '../IconDetails';
 
+import dummyData from './dummyData'
+
 const sizes = ['16', '32', 'Glyph'];
 
 /**
@@ -35,7 +37,17 @@ export default class IconLibrary extends React.Component {
     /**
      * Initialize with details hidden
      */
-    detailsActive: false
+    detailsActive: false,
+
+    /**
+     * Initialize default svg size
+     */
+    svgSize: 32,
+
+    /**
+     * Initialize empty string for selected icon
+     */
+    selectedIcon: ''
   };
 
   /**
@@ -75,9 +87,10 @@ export default class IconLibrary extends React.Component {
     );
   };
 
-  onIconClick = () => {
+  onIconClick = name => {
     this.setState({
-      detailsActive: true
+      detailsActive: true,
+      selectedIcon: dummyData.icons.find( item => name.replace(/[0-9]/g, '').toLowerCase() === item.name)
     })
   }
 
@@ -98,6 +111,12 @@ export default class IconLibrary extends React.Component {
         this.filterIcons();
       }
     );
+  }
+
+  onSVGSizeChange = value => {
+    this.setState({
+      svgSize: value
+    })
   }
 
   /**
@@ -133,7 +152,9 @@ export default class IconLibrary extends React.Component {
       isLoading,
       searchValue,
       sections,
-      detailsActive
+      detailsActive,
+      svgSize,
+      selectedIcon
     } = this.state;
 
     const search = (
@@ -198,7 +219,10 @@ export default class IconLibrary extends React.Component {
           <IconDetails  icons={icons} 
                         detailsActive={detailsActive}
                         onCloseDetails={this.onCloseDetails}
-                        onSearchTerm={this.onSearchTerm}  />
+                        onSearchTerm={this.onSearchTerm}
+                        svgSize={svgSize}
+                        onSVGSizeChange={this.onSVGSizeChange}
+                        selectedIcon={selectedIcon}  />
         </div>
       </div>
     );
@@ -274,7 +298,7 @@ function createIconSections(icons, filteredIcons, onIconClick) {
  */
 function renderIcon(icon, onIconClick) {
   return (
-    <div key={icon.name} className="icon" onClick={onIconClick}>
+    <div key={icon.name} className="icon" onClick={() => { onIconClick(icon.name)} }>
       <div className="icon__card">
         <icon.Component />
       </div>
