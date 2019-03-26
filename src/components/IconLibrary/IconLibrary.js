@@ -1,7 +1,8 @@
 import React from 'react';
-import { Search, Loading, DropdownV2 } from 'carbon-components-react';
+import { Search, Loading } from 'carbon-components-react';
 import icons from 'carbon-icons';
 import IconEmptyState from '../IconEmptyState';
+import IconDetails from '../IconDetails';
 
 const sizes = ['16', '32', 'Glyph'];
 
@@ -105,7 +106,6 @@ export default class IconLibrary extends React.Component {
     } = this.state;
 
     const search = (
-      <>
       <Search
         small
         className="icon-search"
@@ -115,8 +115,6 @@ export default class IconLibrary extends React.Component {
         value={this.state.searchValue}
         labelText="Icon library search"
       />
-      <DropdownV2 />
-      </>
     );
 
     if (isLoading) {
@@ -165,6 +163,7 @@ export default class IconLibrary extends React.Component {
       <div className="page ibm--row">
         <div className="ibm--col-lg-8 ibm--offset-lg-4">{search}</div>
         <div className="ibm--col-lg-12 ibm--offset-lg-4">{sections}</div>
+        <div className="ibm--col-lg-12 ibm--offset-lg-4"><IconDetails icons={icons} /></div>
       </div>
     );
   }
