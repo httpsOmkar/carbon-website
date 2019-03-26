@@ -1,10 +1,12 @@
 .icon-details-container {
   position: fixed;
   bottom: 0;
+  z-index: 99999;
   width: calc( 100% - 2rem );
   max-width: 70rem;
-  transition: transform $transition--expansion $carbon--standard-easing; 
   transform: translateY(100%);
+  transition: transform $transition--expansion $carbon--standard-easing; 
+  
   &.active {
     transform: translateY(0);
   }
@@ -44,14 +46,28 @@
 
 .icon-details-content {
   display: flex;
+  flex-direction: column;
+
+  @include carbon--breakpoint('md') {
+    flex-direction: row;
+  }
 }
 
 .icon-details-section {
   padding: 1rem;
-  border-left: 1px solid $carbon--gray-80;
-
+  border-top: 1px solid $carbon--gray-80;
+  
   &:first-of-type {
-    border-left: none;
+    border-top: none;
+  }
+  
+  @include carbon--breakpoint('md') {
+    border-left: 1px solid $carbon--gray-80;
+    border-top: none;
+
+    &:first-of-type {
+      border-left: none;
+    }
   }
 }
 
@@ -104,6 +120,31 @@
 
       &:hover {
         background-color: $carbon--gray-90;
+      }
+    }
+  }
+}
+
+.icon-details-related-list {
+  list-style: none;
+  display: flex;
+
+  li {
+    margin-left: .25rem;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+    
+    button {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      color: $carbon--gray-10;
+      cursor: pointer;
+
+      &:focus {
+        outline: 2px solid $focus;
       }
     }
   }
