@@ -90,7 +90,8 @@ export default class IconLibrary extends React.Component {
   onIconClick = name => {
     this.setState({
       detailsActive: true,
-      selectedIcon: dummyData.icons.find( item => name.replace(/[0-9]/g, '').toLowerCase() === item.name.toLowerCase())
+      selectedIcon: dummyData.icons.find( item => name.replace(/[0-9]/g, '').toLowerCase() === item.name.toLowerCase()),
+      defaultSize: dummyData.icons.find( item => name.replace(/[0-9]/g, '').toLowerCase() === item.name.toLowerCase()).sizes.sort().reverse()[0]
     })
   }
 

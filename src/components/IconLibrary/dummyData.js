@@ -152,9 +152,6 @@ export default {
 			],
 			"sizes": [
 				16,
-				20,
-				24,
-				32
 			],
 			"variants": [
 				{
@@ -165,10 +162,19 @@ export default {
 					]
 				},
 				{
-					"name": "AddAlt",
+					"name": "Add",
 					"usage": "This is a description for usage",
 					"sizes": [
 						16,
+						32
+					]
+				},
+				{
+					"name": "AddAlt",
+					"usage": "This is a description for usage",
+					"sizes": [
+						20,
+						24,
 						32
 					]
 				},
