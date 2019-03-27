@@ -21,10 +21,10 @@ class IconDetails extends Component {
       onSearchTerm,
       onSVGSizeChange,
       svgSize,
-      selectedIcon
+      selectedIcon,
+      onIconClick
      } = this.props
 
-    console.log(selectedIcon)
     return (
       <div className={classnames('icon-details-container', {
         'active': detailsActive
@@ -59,7 +59,7 @@ class IconDetails extends Component {
                 <span className={`${prefix}--type-label-01 icon-details-section-header`}>Icon sizes</span>
                 <ul className="icon-details-icon-list">
                   { selectedIcon.sizes && selectedIcon.sizes.sort().reverse().map((size, i) => {
-                    const Icon = icons[`${selectedIcon.friendly_name}${size}`]
+                    const Icon = icons[`${selectedIcon.name}${size}`]
                     
                     return (
                       <li key={`ico${i}`}>
@@ -96,17 +96,16 @@ class IconDetails extends Component {
                 <ul className="icon-details-icon-list">
                 {
                   selectedIcon.variants && selectedIcon.variants.map((variant, i) => {
-                    const Icon = icons[`${variant.name}20`]
+                    const Icon = icons[`${variant.name}${variant.sizes.includes(20) ? '20' : variant.sizes[0].toString() }`]
 
                     return (
                       <li key={`variant${i}`}>
-                        <button>
+                        <button onClick={() => { onIconClick(variant.name) } }>
                           <Icon />
                         </button>
                       </li>
                     )
                   })
-
                 }
                 </ul>
               </div>
@@ -114,13 +113,17 @@ class IconDetails extends Component {
               <div className="icon-details-section-item">
                 <span className={`${prefix}--type-label-01 icon-details-section-header`}>Related search</span>
                 <ul className="icon-details-related-list">
-                  <li><button className={`${prefix}--type-body-short-01`} onClick={() => { onSearchTerm('camera')}}>Camera,</button></li>
-                  <li><button className={`${prefix}--type-body-short-01`} onClick={() => { onSearchTerm('record')}}>record,</button></li>
-                  <li><button className={`${prefix}--type-body-short-01`} onClick={() => { onSearchTerm('rolling')}}>rolling,</button></li>
-                  <li><button className={`${prefix}--type-body-short-01`} onClick={() => { onSearchTerm('film')}}>film,</button></li>
-                  <li><button className={`${prefix}--type-body-short-01`} onClick={() => { onSearchTerm('action')}}>action,</button></li>
-                  <li><button className={`${prefix}--type-body-short-01`} onClick={() => { onSearchTerm('tape')}}>tape,</button></li>
-                  <li><button className={`${prefix}--type-body-short-01`} onClick={() => { onSearchTerm('video')}}>video</button></li>
+                  {
+                    selectedIcon.relatedSearch && (
+                      selectedIcon.relatedSearch.map( (item, i) => (
+                      <li key={`related-${i}`}>
+                        <button className={`${prefix}--type-body-short-01`} onClick={() => { onSearchTerm(item.toLowerCase())}}>
+                          {`${item}${i<selectedIcon.relatedSearch.length-1 ? ', ' : ''}`}
+                        </button>
+                      </li>
+                      ))
+                    )
+                  }
                 </ul>
               </div>
             </div>

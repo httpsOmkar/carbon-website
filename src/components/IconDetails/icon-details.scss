@@ -132,6 +132,7 @@
 .icon-details-related-list {
   list-style: none;
   display: flex;
+  flex-flow: wrap;
 
   li {
     margin-left: .25rem;

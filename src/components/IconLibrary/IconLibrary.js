@@ -90,7 +90,7 @@ export default class IconLibrary extends React.Component {
   onIconClick = name => {
     this.setState({
       detailsActive: true,
-      selectedIcon: dummyData.icons.find( item => name.replace(/[0-9]/g, '').toLowerCase() === item.name)
+      selectedIcon: dummyData.icons.find( item => name.replace(/[0-9]/g, '').toLowerCase() === item.name.toLowerCase())
     })
   }
 
@@ -222,7 +222,8 @@ export default class IconLibrary extends React.Component {
                         onSearchTerm={this.onSearchTerm}
                         svgSize={svgSize}
                         onSVGSizeChange={this.onSVGSizeChange}
-                        selectedIcon={selectedIcon}  />
+                        selectedIcon={selectedIcon}
+                        onIconClick={this.onIconClick}  />
         </div>
       </div>
     );

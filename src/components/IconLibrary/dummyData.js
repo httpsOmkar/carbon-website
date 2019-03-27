@@ -1,7 +1,7 @@
 export default {
 	"icons": [
 		{
-			"name": "add",
+			"name": "Add",
 			"friendly_name": "Add",
 			"usage": "This is a description for usage",
 			"categories": [
@@ -24,16 +24,157 @@ export default {
 					"usage": "This is a description for usage",
 					"sizes": [
 						16,
+						20,
 						32
 					]
 				},
-				// {
-				// 	"name": "AddFilled",
-				// 	"usage": "This is a description for usage",
-				// 	"sizes": [
-				// 		16
-				// 	]
-				// }
+				{
+					"name": "AddFilled",
+					"usage": "This is a description for usage",
+					"sizes": [
+						16
+					]
+				}
+			],
+			"relatedSearch": [
+				"Camera", "record", "rolling", "action", "tape", "video"
+			]
+		},
+		{
+			"name": "AddAlt",
+			"friendly_name": "Add Alt",
+			"usage": "This is a description for Add Alt",
+			"categories": [
+				"Navigation",
+				"Outline"
+			],
+			"aliases": [
+				"add",
+				"plus",
+				"cross",
+				"create"
+			],
+			"sizes": [
+				20,
+				24,
+				32
+			],
+			"variants": [
+				{
+					"name": "AddFilled",
+					"usage": "This is a description for usage",
+					"sizes": [
+						16
+					]
+				},
+				{
+					"name": "Add",
+					"usage": "This is a description for usage",
+					"sizes": [
+						16,
+						32
+					]
+				},
+			],
+			"relatedSearch": [
+				"Camera", "add", "rolling", "alarm", "tape", "video", "q"
+			]
+		},
+		{
+			"name": "apps",
+			"friendly_name": "apps",
+			"usage": "This is a description for usage",
+			"categories": [
+				"example cateogry"
+			],
+			"aliases": [
+				"apps"
+			],
+			"sizes": [
+				16
+			]
+		},
+		{
+			"name": "AddFilled",
+			"friendly_name": "Add Filled",
+			"usage": "This is a description for Add Filled",
+			"categories": [
+				"Navigation",
+				"Filled"
+			],
+			"aliases": [
+				"add",
+				"plus",
+				"cross",
+				"create"
+			],
+			"sizes": [
+				16,
+			],
+			"variants": [
+				{
+					"name": "Add",
+					"usage": "This is a description for usage",
+					"sizes": [
+						16,
+						20,
+						24,
+						32
+					]
+				},
+				{
+					"name": "AddAlt",
+					"usage": "This is a description for usage",
+					"sizes": [
+						20,
+						24,
+						32
+					]
+				},
+			],
+			"relatedSearch": [
+				"Camera", "record", "rolling", "action", "tape", "video"
+			]
+		},
+		{
+			"name": "AddOutline",
+			"friendly_name": "Add Outline",
+			"usage": "This is a description for Add Outline",
+			"categories": [
+				"Navigation",
+				"Outline"
+			],
+			"aliases": [
+				"add",
+				"plus",
+				"cross",
+				"create"
+			],
+			"sizes": [
+				16,
+				20,
+				24,
+				32
+			],
+			"variants": [
+				{
+					"name": "AddFilled",
+					"usage": "This is a description for usage",
+					"sizes": [
+						16
+					]
+				},
+				{
+					"name": "AddAlt",
+					"usage": "This is a description for usage",
+					"sizes": [
+						16,
+						32
+					]
+				},
+			],
+			"relatedSearch": [
+				"Camera", "add", "rolling", "alarm", "tape", "video", "q"
 			]
 		},
 		{
