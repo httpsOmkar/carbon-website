@@ -31,7 +31,7 @@ class IconDetails extends Component {
       })}>
         <div className="icon-details">
           <div className="icon-details-header">
-            <span>{selectedIcon.friendly_name}</span>
+            <span className={`${prefix}--type-heading-02`}>{selectedIcon.friendly_name}</span>
             <button className="icon-details-close" onClick={onCloseDetails}>
               <icons.Close20 />
             </button>
