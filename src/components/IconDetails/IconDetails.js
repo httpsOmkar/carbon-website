@@ -46,7 +46,13 @@ class IconDetails extends Component {
               <div className="icon-details-section-item">
                 <span className={`${prefix}--type-label-01 icon-details-section-header`}>Category</span>
                 <p className={`${prefix}--type-body-short-01`}>
-                  {selectedIcon.categories && selectedIcon.categories.map((cat, i) => <span key={`cat-${i}`}>{`${cat}${i<selectedIcon.categories.length-1 ? ', ' : ''}`}</span>)}
+                  {selectedIcon.categories && (
+                    selectedIcon.categories.map((cat, i) => (
+                      <span key={`cat-${i}`}>
+                        {`${cat}${i<selectedIcon.categories.length-1 ? ', ' : ''}`}
+                      </span>
+                    ))
+                  )}
                 </p>
               </div>
 
@@ -58,15 +64,17 @@ class IconDetails extends Component {
               <div className="icon-details-section-item">
                 <span className={`${prefix}--type-label-01 icon-details-section-header`}>Icon sizes</span>
                 <ul className="icon-details-icon-list">
-                  { selectedIcon.sizes && selectedIcon.sizes.sort().reverse().map((size, i) => {
-                    const Icon = icons[`${selectedIcon.name}${size}`]
-                    
-                    return (
-                      <li key={`ico${i}`}>
-                        <Icon />
-                      </li>
-                    )}
-                  )}
+                  { selectedIcon.sizes && (
+                      selectedIcon.sizes.sort().reverse().map((size, i) => {
+                      const Icon = icons[`${selectedIcon.name}${size}`]
+                      
+                      return (
+                        <li className="icon-details-item-border" key={`ico${i}`}>
+                          <Icon />
+                        </li>
+                      )}
+                    ))
+                  }
                 </ul>
               </div>
 
@@ -87,7 +95,7 @@ class IconDetails extends Component {
 
               <div className="icon-details-section-item">
                 <span className={`${prefix}--type-label-01 icon-details-section-header`}>Path</span>
-                <CodeSnippet type="inline">{`es/watson-health/3D-curve--auto-vessels/${svgSize}.js`}</CodeSnippet>
+                <CodeSnippet type="inline">{`this/needs/update/${selectedIcon.name}/${svgSize}.js`}</CodeSnippet>
               </div>
             </div>
             <div className="ibm--col-lg-5 icon-details-section">
@@ -95,7 +103,8 @@ class IconDetails extends Component {
                 <span className={`${prefix}--type-label-01 icon-details-section-header`}>Related icons</span>
                 <ul className="icon-details-icon-list">
                 {
-                  selectedIcon.variants && selectedIcon.variants.map((variant, i) => {
+                  selectedIcon.variants && (
+                    selectedIcon.variants.map((variant, i) => {
                     const Icon = icons[`${variant.name}${variant.sizes.includes(20) ? '20' : variant.sizes[0].toString() }`]
 
                     return (
@@ -105,7 +114,7 @@ class IconDetails extends Component {
                         </button>
                       </li>
                     )
-                  })
+                  }))
                 }
                 </ul>
               </div>

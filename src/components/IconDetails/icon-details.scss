@@ -100,15 +100,19 @@
   li {
     width: rem(40px);
     height: rem(40px);
-    border: 1px solid $carbon--gray-80;
-    border-left: none;
     display: flex;
     justify-content: center;
     align-items: center;
     fill: $carbon--white-0;
-
-    &:first-of-type {
-      border-left: 1px solid $carbon--gray-80;
+    
+    
+    &.icon-details-item-border {
+      border: 1px solid $carbon--gray-80;
+      border-left: none;
+      
+      &:first-of-type {
+        border-left: 1px solid $carbon--gray-80;
+      }
     }
 
     button {
