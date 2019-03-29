@@ -2,6 +2,9 @@ import React from 'react';
 import { Search, Loading } from 'carbon-components-react';
 import icons from 'carbon-icons';
 import IconEmptyState from '../IconEmptyState';
+import IconDetails from '../IconDetails';
+
+import dummyData from './dummyData'
 
 const sizes = ['16', '32', 'Glyph'];
 
@@ -30,6 +33,21 @@ export default class IconLibrary extends React.Component {
      * Initialize with empty string value for search
      */
     searchValue: '',
+
+    /**
+     * Initialize with details hidden
+     */
+    detailsActive: false,
+
+    /**
+     * Initialize default svg size
+     */
+    svgSize: 32,
+
+    /**
+     * Initialize empty string for selected icon
+     */
+    selectedIcon: ''
   };
 
   /**
@@ -47,7 +65,7 @@ export default class IconLibrary extends React.Component {
       });
       return {
         filteredIcons,
-        sections: createIconSections(icons, filteredIcons),
+        sections: createIconSections(icons, filteredIcons, this.onIconClick),
       };
     });
   };
@@ -69,6 +87,39 @@ export default class IconLibrary extends React.Component {
     );
   };
 
+  onIconClick = name => {
+    this.setState({
+      detailsActive: true,
+      selectedIcon: dummyData.icons.find( item => name.replace(/[0-9]/g, '').toLowerCase() === item.name.toLowerCase()),
+      defaultSize: dummyData.icons.find( item => name.replace(/[0-9]/g, '').toLowerCase() === item.name.toLowerCase()).sizes.sort().reverse()[0]
+    })
+  }
+
+  onCloseDetails = () => {
+    this.setState({
+      detailsActive: false
+    })
+  }
+
+  onSearchTerm = term => {
+    const searchValue = term.trim().toLowerCase();
+    this.setState(
+      {
+        searchValue,
+        detailsActive: false
+      },
+      () => {
+        this.filterIcons();
+      }
+    );
+  }
+
+  onSVGSizeChange = value => {
+    this.setState({
+      svgSize: value
+    })
+  }
+
   /**
    * When our component mounts, we need to fetch the icon data from
    * `@carbon/react`
@@ -80,7 +131,7 @@ export default class IconLibrary extends React.Component {
         this.setState({
           icons,
           filteredIcons,
-          sections: createIconSections(icons, filteredIcons),
+          sections: createIconSections(icons, filteredIcons, this.onIconClick),
           isLoading: false,
           error: null,
         });
@@ -102,6 +153,9 @@ export default class IconLibrary extends React.Component {
       isLoading,
       searchValue,
       sections,
+      detailsActive,
+      svgSize,
+      selectedIcon
     } = this.state;
 
     const search = (
@@ -161,7 +215,17 @@ export default class IconLibrary extends React.Component {
     return (
       <div className="page ibm--row">
         <div className="ibm--col-lg-8 ibm--offset-lg-4">{search}</div>
-        <div className="ibm--col-lg-12 ibm--offset-lg-4">{sections}</div>
+        <div className="ibm--col-lg-12 ibm--offset-lg-4">
+          {sections}
+          <IconDetails  icons={icons} 
+                        detailsActive={detailsActive}
+                        onCloseDetails={this.onCloseDetails}
+                        onSearchTerm={this.onSearchTerm}
+                        svgSize={svgSize}
+                        onSVGSizeChange={this.onSVGSizeChange}
+                        selectedIcon={selectedIcon}
+                        onIconClick={this.onIconClick}  />
+        </div>
       </div>
     );
   }
@@ -205,7 +269,7 @@ function groupIconsBySize(icons) {
  * after the state transition for the search bar, then we get less noticeable
  * lag on the input.
  */
-function createIconSections(icons, filteredIcons) {
+function createIconSections(icons, filteredIcons, onIconClick) {
   const groups = groupIconsBySize(icons);
   return Object.keys(groups)
     .filter(size => {
@@ -225,7 +289,7 @@ function createIconSections(icons, filteredIcons) {
         <div className="icon-container">
           {groups[size]
             .filter(icon => filteredIcons.indexOf(icon.name) !== -1)
-            .map(renderIcon)}
+            .map(fIcon => renderIcon(fIcon, onIconClick) )}
         </div>
       </section>
     ));
@@ -234,9 +298,9 @@ function createIconSections(icons, filteredIcons) {
 /**
  * Renders an individual icon
  */
-function renderIcon(icon) {
+function renderIcon(icon, onIconClick) {
   return (
-    <div key={icon.name} className="icon">
+    <div key={icon.name} className="icon" onClick={() => { onIconClick(icon.name)} }>
       <div className="icon__card">
         <icon.Component />
       </div>

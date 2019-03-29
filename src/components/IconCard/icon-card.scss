@@ -70,7 +70,10 @@
   &:focus,
   .icon__actions:focus,
   button:focus,
+  &.selected,
   a:focus {
+    background-color: $carbon--gray-20;
+    
     .icon__actions {
       opacity: 1;
     }
